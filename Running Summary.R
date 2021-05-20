@@ -21,6 +21,9 @@ str(df1$elev_gain_per_mile) #Need to remove or skip NA's
 
 # Create box and whisker plots for HR and Avg.Pace by Activity.Type
 df1 %>% ggplot(aes(x = Activity.Type, y = Avg.HR)) + geom_boxplot()
+df1 %>% ggplot(aes(x = Activity.Type, y = Avg.Pace)) + geom_boxplot()
+# how would I stack this on top of one another?
+# average pace axis displays incorrectly "00:08, 00:10, etc."
 
 # Create scatter plot of HR vs. Pace, colored by type of run
 df1 %>% ggplot(aes(x = Avg.Pace, y = Avg.HR, color = Activity.Type)) + geom_jitter() + scale_x_datetime(date_labels = "%M:%S")
