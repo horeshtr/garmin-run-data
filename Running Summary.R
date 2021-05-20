@@ -19,7 +19,10 @@ df1$Avg.Pace <- as.POSIXct(strptime(df1$Avg.Pace, format = "%M:%S"))
 df1 %>% mutate(df1, elev_gain_per_mile = Elev.Gain / Distance)
 str(df1$elev_gain_per_mile) #Need to remove or skip NA's
 
-# Create scatter plot colored by type of run
+# Create box and whisker plots for HR and Avg.Pace by Activity.Type
+df1 %>% ggplot(aes(x = Activity.Type, y = Avg.HR)) + geom_boxplot()
+
+# Create scatter plot of HR vs. Pace, colored by type of run
 df1 %>% ggplot(aes(x = Avg.Pace, y = Avg.HR, color = Activity.Type)) + geom_jitter() + scale_x_datetime(date_labels = "%M:%S")
 #how do I change the x-axis to be cleaner?
 #pace is discrete currently, can I change to continuous? 
