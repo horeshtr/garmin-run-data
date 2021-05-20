@@ -24,4 +24,5 @@ df1 %>% ggplot(aes(x = Avg.Pace, y = Avg.HR, color = Activity.Type)) + geom_jitt
 #how do I change the x-axis to be cleaner?
 #pace is discrete currently, can I change to continuous? 
 
-df1 %>% ggplot(aes(x = Activity.Type, y = elev_gain_per_mile)) + geom_bar()
+# Commented out bar plot for now
+ df1 %>% ggplot(aes(x = Activity.Type, y = elev_gain_per_mile)) + geom_bar()
